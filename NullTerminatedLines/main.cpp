@@ -55,9 +55,9 @@ void main()
 	/*cout << strToInt(str) * 2 << endl;*/
 	//cout << calck(str) << endl;
 	//(isBin(str)) ? cout << "Двуичный код" : cout << "Не двуичный код"; cout << endl;
-	(BintoDec(str) == 0) ? cout << "Не двуичный код" : cout << BintoDec(str); cout << endl;
+	//(BintoDec(str) == 0) ? cout << "Не двуичный код" : cout << BintoDec(str); cout << endl;
 	//(isHex(str)) ? cout << "Шеснадцатиричное число" : cout << "Не шеснадцатиричное число"; cout << endl;
-	//(HexToDec(str) == 0) ? cout << "Не шеснадцатиричное число" : cout << HexToDec(str); cout << endl;
+	(HexToDec(str) == 0) ? cout << "Не шеснадцатиричное число" : cout << HexToDec(str); cout << endl;
 
 	//cout << StrLend(str) << endl;
 }
@@ -203,7 +203,7 @@ bool isHex(char str[])
 		else if (str[i] >= 'A'&&str[i] <= 'F')abc = true;
 		else return false;
 	}
-	if (number&&abc)
+	if (number||abc)
 	{
 		return true;
 	}
