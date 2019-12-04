@@ -194,8 +194,7 @@ bool isHex(char str[])
 	bool number = false;
 	bool abc = false;
 
-	if (str[0] == '0'&&str[1] != 'x')return false;
-	else if (str[2] == '0')return false;
+	if (str[0] == '0'&&str[1] != 'x'&&str[2] == '0')return false;
 	for (int i = 0; str[i]; i++)
 	{
 		if (str[0] == '0' && str[1] == 'x'&&str[2] != '0'&&str[i] == 'x')i++;
