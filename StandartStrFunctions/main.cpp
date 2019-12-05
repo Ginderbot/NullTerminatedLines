@@ -33,18 +33,13 @@ void main()
 	}
 	for (int i = 0; i < sizeof(words) / sizeof(const char*); i++)
 	{
-		for (int j = 0; j < sizeof(words) / sizeof(const char*); j++)
+		for (int j = i; j < sizeof(words) / sizeof(const char*); j++)
 		{
-			int strcmp(const char* words[5]);
-			if (j < i)
-			{
-				words[i] = words[i - 1];
-			}
-
+			strcmp(words[i], words[j]);
+			if (strcmp(words[i], words[j]) > 0)std::swap(words[i], words[j]);
 		}
-
 	}
-
+	std::cout << "Отсортировано: " << std::endl << std::endl;
 	for (int i = 0; i < sizeof(words) / sizeof(const char*); i++)
 	{
 		std::cout << words[i] << std::endl;
