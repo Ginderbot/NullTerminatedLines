@@ -35,7 +35,6 @@ void main()
 	{
 		for (int j = i; j < sizeof(words) / sizeof(const char*); j++)
 		{
-			strcmp(words[i], words[j]);
 			if (strcmp(words[i], words[j]) > 0)std::swap(words[i], words[j]);
 		}
 	}
