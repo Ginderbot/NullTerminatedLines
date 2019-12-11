@@ -119,15 +119,5 @@ void main()
 	//system("notepad final.txt");
 
 
-	const int n = 256;
-	char sourse_file_name[n]{};
-	char dest_file_name[n]{};
-
-	std::cout << "ֲגוהטעו טלÿ פאיכא: " << std::endl;
-	std::cin >> name;
-
-	if (!strstr(name, ".txt"))
-	{
-		strcat(name, ".txt");
-	}
+	
 }
