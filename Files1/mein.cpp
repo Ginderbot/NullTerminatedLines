@@ -1,25 +1,78 @@
 #include<iostream>
 #include<fstream>
 
-
-//#define WRITE_TO_FILE
+//#define NAME_FILE
+#define RESULT
+#define WRITE_TO_FILE
 //#define READ_FROM_FILE
 
 void main()
 {
 	setlocale(LC_ALL, "");
 #ifdef WRITE_TO_FILE
-	std::cout << "Hello World";
-	std::ofstream fout;
-	fout.open("File.txt", std::ios::app); // app - Дозапись
+#ifdef NAME_FILE
 
-	fout << "Hello World" << std::endl;
+
+	const int n = 256;
+	char name[n] = {};
+
+	std::cout << "Введите имя файла: " << std::endl;
+	std::cin >> name;
+
+	if (!strstr(name, ".txt"))
+	{
+		strcat(name, ".txt");
+	}
+#endif // NAME_FILE
+#ifdef RESULT
+	std::ofstream fout;
+	std::ifstream fin;
+	fin.open("list.txt");
+
+	const int n = 256;
+	char name[n] = { "404.result" };
+	fout.open(name);
+
+
+	const int m = 32;
+	char buff[m] = {};
+
+
+	int x = 1;
+	while (!fin.eof())
+	{
+		fin.getline(buff, m);
+		int i = 0;
+		fout << "host 404-" << x++ << std::endl << "{" << std::endl;
+		fout << "hardware ethernet" << "\t\t\t";
+		do
+		{
+			fout << buff[i], i++;
+		} while (buff[i] != '\t');
+		fout << std::endl << "fixed-address" << "\t\t\t";
+		do
+		{
+			fout << buff[i]; i++;
+		} while (buff[i] != 0);
+		fout << std::endl << "}" << std::endl << std::endl;
+	}
+	fin.close();
+	fout.close();
+
+
+#endif // RESULT
+
+
+
+
+
+	//fout << "Hello World" << std::endl;
 	/*fout.open("AnotherFile.txt");
 	fout << "Sam privet";*/
 
 	fout.close();
 
-	system("notepad File.txt");
+	system(name);
 #endif // WRITE_TO_FILE
 
 #ifdef READ_FROM_FILE
@@ -41,28 +94,40 @@ void main()
 	fin.close();
 #endif // READ_FROM_FILE
 
-	//std::ifstream fout;
-	std::ifstream fin;
-	fin.open("File.txt");
+	////std::ifstream fout;
+	//std::ifstream fin;
+	//fin.open("File.txt");
+
+	//const int n = 256;
+	//char buff_mac[n] = {};
+	//char buff_ip[n] = {};
+
+	//std::ofstream fout("final.txt");
+
+	//while (!fin.eof())
+	//{
+	//	fin >> buff_mac;
+	//	fin >> buff_ip;
+
+	//	std::cout << buff_ip << "\t" << buff_mac << std::endl;
+	//	fout << buff_ip << "\t" << buff_mac << std::endl;
+	//}
+
+	//fin.close();
+	//fout.close();
+
+	//system("notepad final.txt");
+
 
 	const int n = 256;
-	char buff_mac[n] = {};
-	char buff_ip[n] = {};
+	char sourse_file_name[n]{};
+	char dest_file_name[n]{};
 
-	std::ofstream fout("final.txt");
+	std::cout << "Введите имя файла: " << std::endl;
+	std::cin >> name;
 
-	while (!fin.eof())
+	if (!strstr(name, ".txt"))
 	{
-		fin >> buff_mac;
-		fin >> buff_ip;
-
-		std::cout << buff_ip << "\t"<<buff_mac<< std::endl;
-		fout << buff_ip << "\t"<<buff_mac<< std::endl;
+		strcat(name, ".txt");
 	}
-
-	fin.close();
-	fout.close();
-
-	system("notepad final.txt");
-
 }

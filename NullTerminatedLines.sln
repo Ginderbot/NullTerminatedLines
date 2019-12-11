@@ -9,7 +9,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NumericSystems", "NumericSy
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StandartStrFunctions", "StandartStrFunctions\StandartStrFunctions.vcxproj", "{35BD8BF0-C308-498A-875A-EB4F9D960487}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Files1", "Files1\Files1.vcxproj", "{4E1A6787-61AD-4530-A3F7-8C7FB2A53BAA}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Files", "Files1\Files1.vcxproj", "{4E1A6787-61AD-4530-A3F7-8C7FB2A53BAA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
